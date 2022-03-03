@@ -1,0 +1,174 @@
+@import url(common/header.css);
+@import url(common/footer.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Kaisei Tokumin', serif;
+   // background:linear-gradient(45deg, rgba(beige, .5),rgba(red, .1), rgba(skyblue, .5)) ;/*グラデーションを定義*/
+}
+
+
+.mainvisual {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    background-image: url(../images/showcase.jpg);
+    background-size: cover;
+    background-blend-mode: hard-light;
+    background-color: brown;
+    font-family: 'Kaisei Tokumin', serif;
+
+    & h2 {
+        font-size: 55px;
+        background-color: rgba($color: black, $alpha: .5);
+        color:white;
+        margin: 0;
+    }
+    & p {
+        font-size: 25px;
+        color: white;
+    }
+}
+
+.reccom {
+    height: auto;
+
+    & h3 {
+        text-align: center;
+    }
+
+    &-rank {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+        height: auto;
+
+        & .list {
+          //  width: 300px;
+            height: auto;
+         //   background-color: gray;
+            outline: 3px solid gray;
+            position: relative;
+
+            & img {
+                width: 300px;
+                height: 250px;
+                border: 2px solid pink ;
+            }
+
+            &:nth-child(2){
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -50px;
+                    left: 40%;
+                    width: 50px;
+                    height: 50px;
+                    background-image: url(../images/silver.png);
+                    background-size: cover;
+                }
+               
+            }
+            &:nth-child(3){
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -50px;
+                    left: 40%;
+                    width: 50px;
+                    height: 50px;
+                    background-image: url(../images/bronze.png);
+                    background-size: cover;
+                }
+               
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -50px;
+                left: 40%;
+                width: 50px;
+                height: 50px;
+                background-image: url(../images/gold.png);
+                background-size: cover;
+            }
+        }
+    }
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    & h4 {
+        margin: 0;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    & dl {
+        width: 600px;
+        display: flex;
+        border-bottom: 1px solid ;
+        padding-bottom: 30px;
+
+        & dt {
+            display: flex;
+            justify-content: flex-start;
+            width: 20%;
+        }
+        & dd {
+            width: 80%;
+        }
+    }
+}
+
+
+@media screen and(max-width:768px) {
+  .mainvisual {
+      width: 100%;
+      height: 250px;
+
+      & h2 {
+          font-size: 25px;
+      }
+  }
+
+  .reccom {
+      width: 100%;
+
+      &-rank {
+          flex-direction: column;
+          width: 80%;
+          margin: 50px auto;
+
+          & .list {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin: 50px auto;
+          }
+      }
+  }
+
+  .news {
+    width: 100%;
+
+    & dl {
+        width: 90%;
+
+        & dd {
+            font-size: 14px;
+        }
+    }
+  }
+    
+}

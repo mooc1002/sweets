@@ -1,0 +1,218 @@
+@import url(../common/header.css);
+@import url(../common/footer.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap");
+
+body {
+	margin: 0;
+	font-family: "Kaisei Tokumin", serif;
+	width: 100%;
+	height: auto;
+	background: linear-gradient(45deg, rgba(beige, 0.5), rgba(red, 0.1), rgba(skyblue, 0.5)); /*グラデーションを定義*/
+	background-size: 200% 200%; /*サイズを大きくひきのばす*/
+	-webkit-text-size-adjust: 100%;
+}
+
+.about {
+	margin-top: 50px;
+
+	& h2,
+	p {
+		text-align: center;
+		margin: 0;
+	}
+
+	&__box {
+		position: relative;
+		display: flex;
+		width: 80%;
+		margin: 50px auto;
+
+		& .left {
+			transition: all 1.2s;
+			height: auto;
+
+			& img {
+				display: block;
+				width: 500px;
+				height: 350px;
+				opacity: 0;
+				transition: all .7s;
+				transform: translate(-10%, -20%);	
+				
+				&.show {
+					opacity: 1;
+					transform:translate(10%, 0);	
+				}
+			}
+		}
+		& .right {
+			& h3 {
+				width: 50%;
+				min-width: 300px;
+				padding: 20px;
+				font-size: 40px;
+				background-color: rgba($color: white, $alpha: 0.6);
+				opacity: 0;
+				transform: translate(20%, 0);
+				transition: all 1s;
+
+				&.show {
+					opacity: 1;
+					transform: translate(-14%, 0);
+				}
+			}
+
+			& p {
+				width: 75%;
+				min-width: 450px;
+				text-align: left;
+				padding: 20px;
+				background-color: rgba($color: white, $alpha: 0.6);
+				transform: translateX(0);
+				opacity: 0;
+				transition: all .7s;
+
+				&.show {
+					opacity: 1;
+					transform: translateX(-10%);
+				}
+			}
+		}
+	}
+
+	& .quality {
+		display: flex;
+		flex-direction: row-reverse;
+	    opacity: 0;
+
+		&.show {
+			opacity: 1;
+		}
+
+		& .left {
+			& #pic2 {
+				transition: .7s;
+				transform: translate(20%, -20%);
+
+				&.show {
+					opacity: 1;
+					transform: translate(-10%, 0);
+				}
+			
+			}
+		}
+
+		& .right {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+
+			& h3 {
+				transition: .7s;
+				transform: translateX(-20%);
+
+				&.show {
+					opacity: 1;
+					transform: translateX(14%);
+				}
+			}
+			
+			& p {
+				transform: translateX(0);
+
+				&.show {
+					transform: translateX(10%);
+				}
+			}
+		}
+	}
+
+	& .rhombus {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+		width: 100px;
+		height: 100px;
+		background-color: rgba($color: white, $alpha: 0.5);
+		clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+		& h3 {
+			font-size: 20px;
+		}
+	}
+}
+
+@media screen and(max-width:768px) {
+	.about {
+		margin: 0 auto;
+		-webkit-box-direction: none;
+
+		&__box {
+			align-items: center;
+			width: 100%;
+			height: 300px;
+			margin: 0 auto;
+
+			& .left {
+				width: 50%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+
+				& img {
+					max-width: 100%;
+					height: 50%;			
+				}
+			}
+			& .right {
+				width: 50%;
+
+				& h3 {
+					min-width: 150px;
+					padding: 10px;
+					font-size: 20px;
+					transform: translateX(-10%);
+				}
+				& p {
+					min-width: 150px;
+					padding: 5px 10px 10px 10px;
+					font-size: 12px;
+					height: 30px;
+					overflow: hidden;
+
+					&.show {
+						transform:translate(-15%, 0);
+					}
+				}
+
+				& h3,
+				p {
+					margin-top: 0;
+				}
+			}
+		}
+		& .quality {
+	
+			& .left {
+				& #pic2 {
+					&.show {
+						transform: translate(-10%, 0);
+					}
+				}
+			}
+	
+			& .right {
+				
+				& p {
+					transform: translateX(0);
+	
+					&.show {
+						transform: translateX(14%);
+					}
+				}
+			}
+		}
+	}
+}

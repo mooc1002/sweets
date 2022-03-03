@@ -1,0 +1,212 @@
+@import url(../common/header.css);
+@import url(../common/footer.css);
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap");
+body {
+  margin: 0;
+  font-family: 'Kaisei Tokumin', serif;
+}
+
+.mainvisual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 600px;
+  font-size: 30px;
+  background-image: url(../../images/cake.jpg);
+  background-size: cover;
+}
+
+.mainvisual h2 {
+  border-radius: 10px;
+  margin: 0;
+}
+
+.mainvisual p {
+  margin-top: 5px;
+}
+
+.menu {
+  position: relative;
+  margin-bottom: 25em;
+}
+
+.menu nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  margin-left: 150px;
+  border-bottom: 2px solid;
+}
+
+.menu nav ul .menu-item {
+  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 50px;
+  list-style: none;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  margin-right: 35px;
+  cursor: pointer;
+}
+
+.menu nav ul .menu-item.active {
+  background-color: #333;
+  -webkit-box-shadow: 0 0 10px #4b3b3b;
+          box-shadow: 0 0 10px #4b3b3b;
+}
+
+.menu-lineup {
+  position: absolute;
+  left: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 50px auto;
+  width: 80%;
+  height: 300px;
+  -webkit-transition: all .9s;
+  transition: all .9s;
+}
+
+.menu-lineup h3 {
+  text-align: center;
+}
+
+.menu-lineup:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-lineup:nth-child(2).show {
+  opacity: 1;
+}
+
+.menu-lineup:nth-child(3) {
+  z-index: 2;
+  opacity: 0;
+}
+
+.menu-lineup:nth-child(3).show {
+  opacity: 1;
+}
+
+.menu-lineup:nth-child(4) {
+  opacity: 0;
+}
+
+.menu-lineup:nth-child(4).show {
+  opacity: 1;
+}
+
+.menu-lineup .block {
+  width: 300px;
+  height: 200px;
+  border: 1px solid;
+}
+
+.menu-lineup .block img {
+  width: 100%;
+  height: 200px;
+}
+
+.tab {
+  width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .mainvisual {
+    width: 100%;
+    height: 250px;
+  }
+  .mainvisual h2 {
+    font-size: 25px;
+  }
+  .mainvisual p {
+    font-size: 18px;
+  }
+  .menu {
+    width: 100%;
+    margin-bottom: 16em;
+  }
+  .menu nav {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .menu nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+    border-bottom: none;
+    border-bottom: 1px solid;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .menu nav ul .menu-item {
+    min-width: 70px;
+  }
+  .menu nav ul .menu-item.active {
+    background-color: #333;
+    -webkit-box-shadow: 0 0 10px #4b3b3b;
+            box-shadow: 0 0 10px #4b3b3b;
+  }
+  .menu-lineup {
+    width: 90%;
+    margin: 0 auto;
+    left: 5%;
+    height: 200px;
+  }
+  .menu-lineup .block {
+    margin: 0 auto;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .menu-lineup .block img {
+    width: 100%;
+    height: 123px;
+    margin: 0 auto;
+  }
+  .menu-lineup .block h3 {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .menu-lineup .block h3.price {
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=menu.css.map */
